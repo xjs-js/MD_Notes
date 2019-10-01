@@ -1,0 +1,4 @@
+site_name: This is site name
+theme:
+    name: mkdocs
+    highlightjs: true
