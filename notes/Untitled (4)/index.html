@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -548,6 +550,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -660,107 +674,107 @@
                 
                 
                 <h1 id="untitled-4">Untitled (4)</h1>
-<pre><code class="cpp">&lt;script src=&quot;//unpkg.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;//unpkg.com/element-ui@2.12.0/lib/index.js&quot;&gt;&lt;/script&gt;
-&lt;div id=&quot;app&quot;&gt;
-&lt;template&gt;
-  &lt;el-table
-    :data=&quot;tableData&quot;
-    style=&quot;width: 100%&quot;&gt;
-    &lt;el-table-column type=&quot;expand&quot; prop=&quot;names&quot;&gt;
-      &lt;template slot-scope=&quot;scope&quot;&gt;
-        &lt;el-table :data=&quot;scope.row.names&quot;&gt;
-          &lt;el-table-column prop=&quot;name&quot; label=&quot;名称&quot;&gt;
-              &lt;template slot-scope=&quot;scope&quot;&gt;
-                &lt;span&gt;{{scope.row.name}} &lt;/span&gt;
-            &lt;/template&gt;
-            &lt;/el-table-column&gt;
-          &lt;el-table-column prop=&quot;num&quot; label=&quot;数量&quot;&gt;
-              &lt;template slot-scope=&quot;scope&quot;&gt;
-                &lt;span&gt;{{scope.row.num}} &lt;/span&gt;
-            &lt;/template&gt;
-            &lt;/el-table-column&gt;
-          &lt;/el-table&gt;
-      &lt;/template&gt;
-    &lt;/el-table-column&gt;
-    &lt;el-table-column
-      label=&quot;商品 ID&quot;
-      prop=&quot;id&quot;&gt;
-    &lt;/el-table-column&gt;
-    &lt;el-table-column
-      label=&quot;商品名称&quot;
-      prop=&quot;name&quot;&gt;
-    &lt;/el-table-column&gt;
-    &lt;el-table-column
-      label=&quot;描述&quot;
-      prop=&quot;desc&quot;&gt;
-    &lt;/el-table-column&gt;
-  &lt;/el-table&gt;
-&lt;/template&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s">&quot;//unpkg.com/vue/dist/vue.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s">&quot;//unpkg.com/element-ui@2.12.0/lib/index.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="k">template</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="nl">table</span>
+    <span class="p">:</span><span class="n">data</span><span class="o">=</span><span class="s">&quot;tableData&quot;</span>
+    <span class="n">style</span><span class="o">=</span><span class="s">&quot;width: 100%&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;expand&quot;</span> <span class="n">prop</span><span class="o">=</span><span class="s">&quot;names&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="k">template</span> <span class="n">slot</span><span class="o">-</span><span class="n">scope</span><span class="o">=</span><span class="s">&quot;scope&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="nl">table</span> <span class="p">:</span><span class="n">data</span><span class="o">=</span><span class="s">&quot;scope.row.names&quot;</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span> <span class="n">prop</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;名称&quot;</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="k">template</span> <span class="n">slot</span><span class="o">-</span><span class="n">scope</span><span class="o">=</span><span class="s">&quot;scope&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">scope</span><span class="p">.</span><span class="n">row</span><span class="p">.</span><span class="n">name</span><span class="p">}}</span> <span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="k">template</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span> <span class="n">prop</span><span class="o">=</span><span class="s">&quot;num&quot;</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;数量&quot;</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="k">template</span> <span class="n">slot</span><span class="o">-</span><span class="n">scope</span><span class="o">=</span><span class="s">&quot;scope&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">scope</span><span class="p">.</span><span class="n">row</span><span class="p">.</span><span class="n">num</span><span class="p">}}</span> <span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="k">template</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span><span class="o">&gt;</span>
+          <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="k">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span>
+      <span class="n">label</span><span class="o">=</span><span class="s">&quot;商品 ID&quot;</span>
+      <span class="n">prop</span><span class="o">=</span><span class="s">&quot;id&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span>
+      <span class="n">label</span><span class="o">=</span><span class="s">&quot;商品名称&quot;</span>
+      <span class="n">prop</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span>
+      <span class="n">label</span><span class="o">=</span><span class="s">&quot;描述&quot;</span>
+      <span class="n">prop</span><span class="o">=</span><span class="s">&quot;desc&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">column</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">el</span><span class="o">-</span><span class="n">table</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="k">template</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
 
-<pre><code class="cpp">@import url(&quot;//unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css&quot;);
-.demo-table-expand {
-    font-size: 0;
-  }
-  .demo-table-expand label {
-    width: 90px;
-    color: #99a9bf;
-  }
-  .demo-table-expand .el-form-item {
-    margin-right: 0;
-    margin-bottom: 0;
-    width: 50%;
-  }
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">@</span><span class="n">import</span> <span class="n">url</span><span class="p">(</span><span class="s">&quot;//unpkg.com/element-ui@2.12.0/lib/theme-chalk/index.css&quot;</span><span class="p">);</span>
+<span class="p">.</span><span class="n">demo</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">expand</span> <span class="p">{</span>
+    <span class="n">font</span><span class="o">-</span><span class="nl">size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="n">demo</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">expand</span> <span class="n">label</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="mi">90</span><span class="n">px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">99</span><span class="n">a9bf</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="n">demo</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">expand</span> <span class="p">.</span><span class="n">el</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">item</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="o">-</span><span class="nl">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">margin</span><span class="o">-</span><span class="nl">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
 
-<pre><code>var Main = {
+<div class="codehilite"><pre><span></span>var Main = {
     data() {
       return {
         tableData: [{
-          names:[{name: 'apple', num:1}, {name: 'android', num:2}],
-          id: '12987122',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
+          names:[{name: &#39;apple&#39;, num:1}, {name: &#39;android&#39;, num:2}],
+          id: &#39;12987122&#39;,
+          name: &#39;好滋好味鸡蛋仔&#39;,
+          category: &#39;江浙小吃、小吃零食&#39;,
+          desc: &#39;荷兰优质淡奶，奶香浓而不腻&#39;,
+          address: &#39;上海市普陀区真北路&#39;,
+          shop: &#39;王小虎夫妻店&#39;,
+          shopId: &#39;10333&#39;
         }, {
-          names:[{name: 'apple1', num:1}, {name: 'androi2d', num:2}],
-          id: '12987123',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
+          names:[{name: &#39;apple1&#39;, num:1}, {name: &#39;androi2d&#39;, num:2}],
+          id: &#39;12987123&#39;,
+          name: &#39;好滋好味鸡蛋仔&#39;,
+          category: &#39;江浙小吃、小吃零食&#39;,
+          desc: &#39;荷兰优质淡奶，奶香浓而不腻&#39;,
+          address: &#39;上海市普陀区真北路&#39;,
+          shop: &#39;王小虎夫妻店&#39;,
+          shopId: &#39;10333&#39;
         }, {
-          names:[{name: 'apple', num:1}, {name: 'android', num:2}],
-          id: '12987125',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
+          names:[{name: &#39;apple&#39;, num:1}, {name: &#39;android&#39;, num:2}],
+          id: &#39;12987125&#39;,
+          name: &#39;好滋好味鸡蛋仔&#39;,
+          category: &#39;江浙小吃、小吃零食&#39;,
+          desc: &#39;荷兰优质淡奶，奶香浓而不腻&#39;,
+          address: &#39;上海市普陀区真北路&#39;,
+          shop: &#39;王小虎夫妻店&#39;,
+          shopId: &#39;10333&#39;
         }, {
-          names:[{name: 'apple', num:1}, {name: 'android', num:2}],
-          id: '12987126',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
+          names:[{name: &#39;apple&#39;, num:1}, {name: &#39;android&#39;, num:2}],
+          id: &#39;12987126&#39;,
+          name: &#39;好滋好味鸡蛋仔&#39;,
+          category: &#39;江浙小吃、小吃零食&#39;,
+          desc: &#39;荷兰优质淡奶，奶香浓而不腻&#39;,
+          address: &#39;上海市普陀区真北路&#39;,
+          shop: &#39;王小虎夫妻店&#39;,
+          shopId: &#39;10333&#39;
         }]
       }
     }
   }
 var Ctor = Vue.extend(Main)
-new Ctor().$mount('#app')
-</code></pre>
+new Ctor().$mount(&#39;#app&#39;)
+</pre></div>
                 
                   
                 

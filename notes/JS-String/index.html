@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -577,6 +579,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -707,67 +721,62 @@
                 <h1 id="js-string">JS-String</h1>
 <h2 id="props">Props</h2>
 <ol>
-<li>.length</li>
-</ol>
-<pre><code class="js">&quot;Nice!&quot;.length;
-// 5
-</code></pre>
+<li>
+<p>.length
+<div class="codehilite"><pre><span></span><span class="s2">&quot;Nice!&quot;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 5</span>
+</pre></div></p>
+</li>
+<li>
+<p>.includes(searchString)
+<div class="codehilite"><pre><span></span><span class="s2">&quot;Hello World&quot;</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">);</span>  <span class="c1">// true</span>
+<span class="s2">&quot;Hello World&quot;</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Potato&quot;</span><span class="p">);</span> <span class="c1">// false</span>
+</pre></div></p>
+</li>
+<li>
+<p>.toUpperCase()
+<div class="codehilite"><pre><span></span><span class="s2">&quot;hello&quot;</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span> <span class="c1">// &quot;HELLO&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>.toLowerCase()
+<div class="codehilite"><pre><span></span><span class="s2">&quot;NICe&quot;</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span> <span class="c1">// &quot;nice&quot;;</span>
+</pre></div></p>
+</li>
+<li>
+<p>substring(indexStart, indexEnd)
+* indexStart:  the position of the first character you'd like to <strong>include</strong>
+* indexEnd:  可省略，the position of the first character you'd like to <strong>ignore</strong>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">language</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
+<span class="nx">language</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">//&quot;ava&quot;</span>
 
-<ol>
-<li>.includes(searchString)</li>
+<span class="nx">language</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">//&quot;Script&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>Template strings
+<div class="codehilite"><pre><span></span><span class="sb">`This is a multiline</span>
+<span class="sb">string that</span>
+<span class="sb">just works!`</span>
+<span class="sb">`I am learning </span><span class="si">${</span><span class="nx">language</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</pre></div></p>
+</li>
+<li>
+<p>.startsWith(serchString) .endsWith(searchString)
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">phoneNumber</span> <span class="o">=</span> <span class="s2">&quot;+103123456&quot;</span><span class="p">;</span>
+<span class="nx">phoneNumber</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">);</span> <span class="c1">//true</span>
+<span class="nx">phoneNumber</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">);</span> <span class="c1">//false</span>
+<span class="nx">phoneNumber</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;56&quot;</span><span class="p">);</span> <span class="c1">// true</span>
+</pre></div></p>
+</li>
+<li>
+<p>.trim()
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">.</span><span class="nx">trim</span><span class="p">());</span>
+<span class="c1">// expected output: &quot;Hello world!&quot;;</span>
+</pre></div></p>
+</li>
 </ol>
-<pre><code class="js">&quot;Hello World&quot;.includes(&quot;World&quot;);  // true
-&quot;Hello World&quot;.includes(&quot;Potato&quot;); // false
-</code></pre>
-
-<ol>
-<li>.toUpperCase()</li>
-</ol>
-<pre><code class="js">&quot;hello&quot;.toUpperCase(); // &quot;HELLO&quot;
-</code></pre>
-
-<ol>
-<li>.toLowerCase()</li>
-</ol>
-<pre><code class="js">&quot;NICe&quot;.toLowerCase(); // &quot;nice&quot;;
-</code></pre>
-
-<ol>
-<li>substring(indexStart, indexEnd)</li>
-<li>indexStart:  the position of the first character you'd like to <strong>include</strong></li>
-<li>indexEnd:  可省略，the position of the first character you'd like to <strong>ignore</strong></li>
-</ol>
-<pre><code class="js">const language = &quot;JavaScript&quot;;
-language.substring(1, 4); //&quot;ava&quot;
-
-language.substring(4); //&quot;Script&quot;
-</code></pre>
-
-<ol>
-<li>Template strings</li>
-</ol>
-<pre><code class="js">`This is a multiline
-string that
-just works!`
-`I am learning ${language}`;
-</code></pre>
-
-<ol>
-<li>.startsWith(serchString) .endsWith(searchString)</li>
-</ol>
-<pre><code class="js">const phoneNumber = &quot;+103123456&quot;;
-phoneNumber.startsWith(&quot;+&quot;); //true
-phoneNumber.startsWith(&quot;10&quot;); //false
-phoneNumber.endsWith(&quot;56&quot;); // true
-</code></pre>
-
-<ol>
-<li>.trim()</li>
-</ol>
-<pre><code class="js">var greeting = '   Hello world!   ';
-console.log(greeting.trim());
-// expected output: &quot;Hello world!&quot;;
-</code></pre>
                 
                   
                 

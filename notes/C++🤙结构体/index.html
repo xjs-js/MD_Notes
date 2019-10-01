@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -548,6 +550,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -660,17 +674,16 @@
                 
                 
                 <h1 id="c">C++<img alt="🤙" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/4.5/png/64/1f919.png" title=":call_me_hand:" />结构体</h1>
-<pre><code class="cpp">struct StudentClassInfo
-{
+<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">StudentClassInfo</span>
+<span class="p">{</span>
 
-};
+<span class="p">};</span>
 
-typedef boost::shared_ptr&lt;StudentClassInfo&gt; StudentClassInfoPtr;
+<span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">StudentClassInfo</span><span class="o">&gt;</span> <span class="n">StudentClassInfoPtr</span><span class="p">;</span>
+</pre></div>
 
-</code></pre>
-
-<pre><code class="cpp">StudentClassInfoPtr classInfo = boost::make_shared&lt;StudentClassInfo&gt;();
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">StudentClassInfoPtr</span> <span class="n">classInfo</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">StudentClassInfo</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
                 
                   
                 

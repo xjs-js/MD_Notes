@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -604,6 +606,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -764,49 +778,44 @@
 <li>QJsonArray</li>
 </ul>
 <h2 id="_1">构造</h2>
-<pre><code class="cpp">// 单个json对象
-QJsonObject object
-{
-    {&quot;property1&quot;, 1},
-    {&quot;property2&quot;, 2}
-};
-</code></pre>
-
-<pre><code class="json">{
-  property1: 1,
-  property2: 2
-}
-</code></pre>
-
-<ul>
-<li>QJsonArray</li>
-</ul>
-<pre><code class="cpp">QJsonArray flags   {
-  QJsonObject{{&quot;flag1&quot;, ui-&gt;checkBoxFlag1-&gt;isChecked()}},
-  QJsonObject{{&quot;flag4&quot;, ui-&gt;checkBoxFlag4-&gt;isChecked()}}
-};
-</code></pre>
-
+<p><div class="codehilite"><pre><span></span><span class="c1">// 单个json对象</span>
+<span class="n">QJsonObject</span> <span class="n">object</span>
+<span class="p">{</span>
+    <span class="p">{</span><span class="s">&quot;property1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&quot;property2&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="err">property1:</span> <span class="err">1,</span>
+  <span class="err">property2:</span> <span class="err">2</span>
+<span class="p">}</span>
+</pre></div>
+* QJsonArray
+<div class="codehilite"><pre><span></span><span class="n">QJsonArray</span> <span class="n">flags</span>   <span class="p">{</span>
+  <span class="n">QJsonObject</span><span class="p">{{</span><span class="s">&quot;flag1&quot;</span><span class="p">,</span> <span class="n">ui</span><span class="o">-&gt;</span><span class="n">checkBoxFlag1</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()}},</span>
+  <span class="n">QJsonObject</span><span class="p">{{</span><span class="s">&quot;flag4&quot;</span><span class="p">,</span> <span class="n">ui</span><span class="o">-&gt;</span><span class="n">checkBoxFlag4</span><span class="o">-&gt;</span><span class="n">isChecked</span><span class="p">()}}</span>
+<span class="p">};</span>
+</pre></div></p>
 <h2 id="_2">转换</h2>
 <ul>
-<li>QJsonObject -&gt; QString</li>
+<li>
+<p>QJsonObject -&gt; QString
+<div class="codehilite"><pre><span></span><span class="n">QJsonObject</span> <span class="n">jsonObj</span><span class="p">;</span> <span class="c1">// assume this has been populated with Json data</span>
+
+<span class="n">QJsonDocument</span> <span class="nf">doc</span><span class="p">(</span><span class="n">jsonObj</span><span class="p">);</span>
+<span class="n">QString</span> <span class="nf">strJson</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">toJson</span><span class="p">(</span><span class="n">QJsonDocument</span><span class="o">::</span><span class="n">Compact</span><span class="p">));</span>
+</pre></div></p>
+</li>
+<li>
+<p>QJsonArray -&gt; QString
+<div class="codehilite"><pre><span></span><span class="n">QJsonArray</span> <span class="n">data</span><span class="p">;</span>
+<span class="n">QJsonDocument</span> <span class="n">doc</span><span class="p">;</span>
+<span class="n">doc</span><span class="p">.</span><span class="n">setArray</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+<span class="n">QString</span> <span class="nf">dataToString</span><span class="p">(</span><span class="n">doc</span><span class="p">.</span><span class="n">toJson</span><span class="p">());</span>
+</pre></div></p>
+</li>
 </ul>
-<pre><code class="cpp">QJsonObject jsonObj; // assume this has been populated with Json data
-
-QJsonDocument doc(jsonObj);
-QString strJson(doc.toJson(QJsonDocument::Compact));
-</code></pre>
-
-<ul>
-<li>QJsonArray -&gt; QString</li>
-</ul>
-<pre><code class="cpp">QJsonArray data;
-QJsonDocument doc;
-doc.setArray(data);
-
-QString dataToString(doc.toJson());
-</code></pre>
-
 <h2 id="reference">Reference</h2>
 <h3 id="_3">解析</h3>
 <p><a href="https://stackoverflow.com/questions/19822211/qt-parsing-json-using-qjsondocument-qjsonobject-qjsonarray">Qt parsing JSON using QJsonDocument, QJsonObject, QJsonArray</a></p>

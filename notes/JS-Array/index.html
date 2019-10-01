@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -584,6 +586,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -720,16 +734,15 @@
                 
                 <h1 id="js-array">JS-Array</h1>
 <h5 id="sort">sort</h5>
-<pre><code class="js">const heights = new Array(9, 8, 7, 6, 5, 4);
-heights.sort((a,b) =&gt; {return a &lt;= b ? -1 : 1});
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">heights</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="nx">heights</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span> <span class="o">&lt;=</span> <span class="nx">b</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">});</span>
+</pre></div>
 
 <h5 id="_1">增</h5>
-<pre><code class="js">const arr = new Array();
-arr.push(9);  // [9]
-arr.push(10); // [9, 10]
-
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>  <span class="c1">// [9]</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// [9, 10]</span>
+</pre></div>
                 
                   
                 

@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -584,6 +586,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -720,23 +734,22 @@
                 
                 <h1 id="terminal">Terminal</h1>
 <h4 id="_1">杀掉占用某个端口的进程</h4>
-<pre><code class="bash">lsof -i:8000
-kill -9 pid
-</code></pre>
+<div class="codehilite"><pre><span></span>lsof -i:8000
+<span class="nb">kill</span> -9 pid
+</pre></div>
 
 <h4 id="md5sha1sha256">MD5、SHA1、SHA256</h4>
-<p>Windows</p>
-<pre><code class="bash">certutil -hashfile &lt;filename&gt; MD5
+<p>Windows
+<div class="codehilite"><pre><span></span>certutil -hashfile &lt;filename&gt; MD5
 certutil -hashfile &lt;filename&gt; SHA1
 certutil -hashfile &lt;filename&gt; SHA256
-</code></pre>
-
+</pre></div></p>
 <hr />
-<p>Mac</p>
-<pre><code>md5           &lt;filename&gt;  
+<p>Mac
+<div class="codehilite"><pre><span></span>md5           &lt;filename&gt;  
 shasum -a 1   &lt;filename&gt; # SHA1
 shasum -a 256 &lt;filename&gt; # SHA256
-</code></pre>
+</pre></div></p>
                 
                   
                 

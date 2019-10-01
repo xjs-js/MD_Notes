@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -577,6 +579,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -709,10 +723,8 @@
   <summary><mark>std::string</mark> & <mark>QString</mark></summary>
   <markdown>
 <mark>std::string</mark> -> <mark>QString</mark>
-
-<pre><code class="cpp">std::string target = QString::fromStdString(source);
-</code></pre>
-
+<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">target</span> <span class="o">=</span> <span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">source</span><span class="p">);</span>
+</pre></div>
   </markdown>
 </details>
 
@@ -720,22 +732,20 @@
   <summary><mark>QString</mark> & <mark>int</mark></summary>
   <markdown>
 <mark>QString</mark> -> <mark>int</mark>
-
-<pre><code class="cpp">QString source = &quot;12&quot;;
-int target = source.toInt();
-</code></pre>
-
+<div class="codehilite"><pre><span></span><span class="n">QString</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&quot;12&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">source</span><span class="p">.</span><span class="n">toInt</span><span class="p">();</span>
+</pre></div>
   </markdown>
 </details>
 
 <h4 id="qstring-qdatetime">QString -&gt; QDateTime</h4>
-<pre><code class="cpp">QString strBuffer;  
-QDateTime time;  
+<div class="codehilite"><pre><span></span><span class="n">QString</span> <span class="n">strBuffer</span><span class="p">;</span>  
+<span class="n">QDateTime</span> <span class="n">time</span><span class="p">;</span>  
   
-strBuffer = &quot;2010-07-02 17:35:00&quot;;  
+<span class="n">strBuffer</span> <span class="o">=</span> <span class="s">&quot;2010-07-02 17:35:00&quot;</span><span class="p">;</span>  
   
-time = QDateTime::fromString(strBuffer, &quot;yyyy-MM-dd hh:mm:ss&quot;);  
-</code></pre>
+<span class="n">time</span> <span class="o">=</span> <span class="n">QDateTime</span><span class="o">::</span><span class="n">fromString</span><span class="p">(</span><span class="n">strBuffer</span><span class="p">,</span> <span class="s">&quot;yyyy-MM-dd hh:mm:ss&quot;</span><span class="p">);</span>  
+</pre></div>
                 
                   
                 

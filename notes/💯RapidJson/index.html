@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/basic.css">
+    
     
       
     
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="This is site name" class="md-header-nav__button md-logo">
+        <a href="../.." title="Notes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              This is site name
+              Notes
             </span>
             <span class="md-header-nav__topic">
               
@@ -154,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="This is site name" class="md-nav__button md-logo">
+    <a href="../.." title="Notes" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    This is site name
+    Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -539,6 +541,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="TL;DR Cheat Sheet" class="md-nav__link">
+      TL;DR Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="css" class="md-nav__link">
       css
     </a>
@@ -710,15 +724,15 @@
 <details>
   <summary>Code</summary>
   <markdown></p>
-<pre><code class="cpp">std::string hello = &quot;你好&quot;;
-// 编码转换可省略
-hello = CodeToCode::GBKToUTF8(QString::fromStdString(hello)).toStdString();
+<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;你好&quot;</span><span class="p">;</span>
+<span class="c1">// 编码转换可省略</span>
+<span class="n">hello</span> <span class="o">=</span> <span class="n">CodeToCode</span><span class="o">::</span><span class="n">GBKToUTF8</span><span class="p">(</span><span class="n">QString</span><span class="o">::</span><span class="n">fromStdString</span><span class="p">(</span><span class="n">hello</span><span class="p">)).</span><span class="n">toStdString</span><span class="p">();</span>
 
-Value strContent(kStringType);
-strContent.SetString(hello.c_str(), allocator);
+<span class="n">Value</span> <span class="nf">strContent</span><span class="p">(</span><span class="n">kStringType</span><span class="p">);</span>
+<span class="n">strContent</span><span class="p">.</span><span class="n">SetString</span><span class="p">(</span><span class="n">hello</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">allocator</span><span class="p">);</span>
 
-root.AddMember(&quot;Status&quot;, strContent, allocator);
-</code></pre>
+<span class="n">root</span><span class="p">.</span><span class="n">AddMember</span><span class="p">(</span><span class="s">&quot;Status&quot;</span><span class="p">,</span> <span class="n">strContent</span><span class="p">,</span> <span class="n">allocator</span><span class="p">);</span>
+</pre></div>
 
 <p></markdown>
 </details></p>
