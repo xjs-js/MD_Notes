@@ -1,4 +1,29 @@
-site_name: This is site name
+site_name: Notes 
 theme:
-    name: mkdocs
+    name: material
     highlightjs: true
+
+extra_css:
+    # - css/extra.css
+    - css/basic.css
+
+markdown_extensions:
+    # - codehilite
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_png
+    # - pymdownx.tasklist:
+    #     custom_checkbox: true
+    - pymdownx.extra # replacement for markdown.extensions.extra see https://facelessuser.github.io/pymdown-extensions/extensions/extra/
+    - markdown.extensions.sane_lists
+    - markdown.extensions.admonition
+    - markdown.extensions.codehilite #(guess_lang=false)
+    - markdown.extensions.meta
+    - pymdownx.arithmatex
+    - pymdownx.caret
+    - pymdownx.details
+    - pymdownx.inlinehilite
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.critic
