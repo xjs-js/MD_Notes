@@ -1,0 +1,57 @@
+/* set style for heading */
+.md-header {
+    background-color: #526e7a;
+    height: 33px;
+}
+
+footer {
+    display: none;
+}
+
+.md-grid {
+    margin: 0px 100px 20px;
+    max-width: 200000px;;
+}
+
+article {
+    max-width: 880px;
+    background-color: #F4F4EB;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2);
+    border-radius: 15px;
+    padding: 2%;
+}
+
+.md-sidebar--secondary {
+    right: 5%;
+} 
+
+.md-sidebar--primary {
+    background-color: #F4F4EB;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2);
+    border-radius: 15px; 
+    left: 5%;
+}
+
+body {
+    background-color: #D1E9F4;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3, h4, h5, h6 {
+    font-size: 18px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: '', sans-serif;
+}
+
+p {
+    font-size: 12px;
+}

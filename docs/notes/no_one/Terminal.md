@@ -18,9 +18,9 @@ kill -9 pid
 #### MD5、SHA1、SHA256
 Windows
 ```bash
-certutil -hashfile <filename> MD5
-certutil -hashfile <filename> SHA1
-certutil -hashfile <filename> SHA256
+CertUtil -hashfile <filename> MD5
+CertUtil -hashfile <filename> SHA1
+CertUtil -hashfile <filename> SHA256
 ```
 ---
 Mac
