@@ -1,0 +1,1158 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Boost TCP Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/basic.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#boost-tcp-tutorial" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Notes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Notes
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Boost TCP Tutorial
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Notes" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Basic
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Basic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basic/Github/" title="Github" class="md-nav__link">
+      Github
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basic/Software List/" title="Software List" class="md-nav__link">
+      Software List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basic/Terminal/" title="Terminal" class="md-nav__link">
+      Terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basic/正则表达式/" title="正则表达式" class="md-nav__link">
+      正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basic/端口号/" title="端口号" class="md-nav__link">
+      端口号
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Boost
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Boost
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Boost TCP Tutorial
+      </label>
+    
+    <a href="./" title="Boost TCP Tutorial" class="md-nav__link md-nav__link--active">
+      Boost TCP Tutorial
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daytime1-a-synchronous-tcp-daytime-client" class="md-nav__link">
+    Daytime.1 - A synchronous TCP daytime client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daytime2-a-synchronous-tcp-daytime-server" class="md-nav__link">
+    Daytime.2 - A synchronous TCP daytime server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daytime-client-daytime-server-improved" class="md-nav__link">
+    Daytime Client 和 Daytime Server Improved
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daytime3-an-asynchronous-tcp-daytime-server" class="md-nav__link">
+    Daytime.3 - An asynchronous TCP daytime server
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Timer/" title="Timer" class="md-nav__link">
+      Timer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      C++
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C++/C++🤙map/" title="C++🤙map" class="md-nav__link">
+      C++🤙map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C++/C++🤙vector/" title="C++🤙vector" class="md-nav__link">
+      C++🤙vector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C++/C++🤙结构体/" title="C++🤙结构体" class="md-nav__link">
+      C++🤙结构体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C++/类型转换/" title="类型转换" class="md-nav__link">
+      类型转换
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C++/💯RapidJson/" title="💯RapidJson" class="md-nav__link">
+      💯RapidJson
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      FullStack
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        FullStack
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JS-Array/" title="JS-Array" class="md-nav__link">
+      JS-Array
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JS-Fetch/" title="JS-Fetch" class="md-nav__link">
+      JS-Fetch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JS-Numbers/" title="JS-Numbers" class="md-nav__link">
+      JS-Numbers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JS-String/" title="JS-String" class="md-nav__link">
+      JS-String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JS-Types/" title="JS-Types" class="md-nav__link">
+      JS-Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JS-注释/" title="JS-注释" class="md-nav__link">
+      JS-注释
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/JSON API/" title="JSON API" class="md-nav__link">
+      JSON API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/React🤙Template/" title="React🤙Template" class="md-nav__link">
+      React🤙Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/React🤙生命周期/" title="React🤙生命周期" class="md-nav__link">
+      React🤙生命周期
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/css/" title="css" class="md-nav__link">
+      css
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FullStack/字体/" title="字体" class="md-nav__link">
+      字体
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      IDE Config
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        IDE Config
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE_Config/VS/" title="VS" class="md-nav__link">
+      VS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IDE_Config/boost/" title="boost" class="md-nav__link">
+      boost
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      QT
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        QT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../QT/QT🤙Json/" title="QT🤙Json" class="md-nav__link">
+      QT🤙Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../QT/QT🤙Menu/" title="QT🤙Menu" class="md-nav__link">
+      QT🤙Menu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../QT/QT🤙QShortcut/" title="QT🤙QShortcut" class="md-nav__link">
+      QT🤙QShortcut
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daytime1-a-synchronous-tcp-daytime-client" class="md-nav__link">
+    Daytime.1 - A synchronous TCP daytime client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daytime2-a-synchronous-tcp-daytime-server" class="md-nav__link">
+    Daytime.2 - A synchronous TCP daytime server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daytime-client-daytime-server-improved" class="md-nav__link">
+    Daytime Client 和 Daytime Server Improved
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daytime3-an-asynchronous-tcp-daytime-server" class="md-nav__link">
+    Daytime.3 - An asynchronous TCP daytime server
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="boost-tcp-tutorial">Boost TCP Tutorial</h1>
+<p>最近要写一个TCP的服务，所以又重新学习了一遍<a href="https://www.boost.org/doc/libs/1_63_0/doc/html/boost_asio/tutorial.html">boost官网</a>的教程</p>
+<h2 id="daytime1-a-synchronous-tcp-daytime-client"><a href="https://www.boost.org/doc/libs/1_63_0/doc/html/boost_asio/tutorial.html#boost_asio.tutorial.tutdaytime1">Daytime.1 - A synchronous TCP daytime client</a></h2>
+<p>这是一个简单的TCP Client，连接到TCP Server之后，会收到一个TCP Server发来的时间，一直等待TCP Server发送。</p>
+<p><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/array.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/asio.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">QCoreApplication</span> <span class="n">a</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+
+    <span class="c1">// io_service</span>
+    <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">io_service</span> <span class="n">io_service</span><span class="p">;</span>
+
+    <span class="c1">// 建立一个socket</span>
+    <span class="n">tcp</span><span class="o">::</span><span class="n">socket</span> <span class="n">socket</span><span class="p">(</span><span class="n">io_service</span><span class="p">);</span>
+
+    <span class="c1">// 服务端的地址和端口</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">address</span> <span class="o">=</span> <span class="s">&quot;192.168.0.102&quot;</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">8898</span><span class="p">;</span>
+    <span class="n">tcp</span><span class="o">::</span><span class="n">endpoint</span> <span class="n">endpoint</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">address</span><span class="o">::</span><span class="n">from_string</span><span class="p">(</span><span class="n">address</span><span class="p">),</span> <span class="n">port</span><span class="p">);</span>
+
+    <span class="c1">// socket连接到endpoint</span>
+    <span class="n">socket</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">endpoint</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(;;)</span>
+    <span class="p">{</span>
+        <span class="n">boost</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span> <span class="mi">128</span><span class="o">&gt;</span> <span class="n">buf</span><span class="p">;</span>
+        <span class="n">boost</span><span class="o">::</span><span class="n">system</span><span class="o">::</span><span class="n">error_code</span> <span class="n">error</span><span class="p">;</span>
+
+        <span class="c1">// 同步读取Server发来的消息，如果没有，会一直阻塞在此</span>
+        <span class="kt">size_t</span> <span class="n">len</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">read_some</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="n">error</span><span class="p">);</span>
+
+        <span class="c1">// 在命令行输出收到的消息</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">len</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+从上面👆的代码我们知道，一个简单的TCP Client程序需要一个io_service，一个socket，一个endpoint。</p>
+<h2 id="daytime2-a-synchronous-tcp-daytime-server"><a href="https://www.boost.org/doc/libs/1_63_0/doc/html/boost_asio/tutorial.html#boost_asio.tutorial.tutdaytime2">Daytime.2 - A synchronous TCP daytime server</a></h2>
+<p>这是一个简单的TCP Server，等待一个客户端的连接，然后发送当前时间，继续等待下一个连接。 </p>
+<p><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/asio.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+
+<span class="c1">// 返回当前的时间</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">make_daytime_string</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> <span class="c1">// For time_t, time and ctime;</span>
+  <span class="kt">time_t</span> <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">QCoreApplication</span> <span class="n">a</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+
+    <span class="c1">// io_service</span>
+    <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">io_service</span> <span class="n">io_service</span><span class="p">;</span>
+
+    <span class="c1">// acceptor</span>
+    <span class="n">tcp</span><span class="o">::</span><span class="n">acceptor</span> <span class="n">acceptor</span><span class="p">(</span><span class="n">io_service</span><span class="p">,</span> <span class="n">tcp</span><span class="o">::</span><span class="n">endpoint</span><span class="p">(</span><span class="n">tcp</span><span class="o">::</span><span class="n">v4</span><span class="p">(),</span> <span class="mi">8898</span><span class="p">));</span>
+
+    <span class="k">for</span> <span class="p">(;;)</span>
+    <span class="p">{</span>
+      <span class="c1">// socket</span>
+      <span class="n">tcp</span><span class="o">::</span><span class="n">socket</span> <span class="n">socket</span><span class="p">(</span><span class="n">io_service</span><span class="p">);</span>
+
+      <span class="c1">// 首先会阻塞在这里</span>
+      <span class="n">acceptor</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="n">socket</span><span class="p">);</span>
+
+      <span class="c1">// 当前时间</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="n">make_daytime_string</span><span class="p">();</span>
+
+      <span class="n">boost</span><span class="o">::</span><span class="n">system</span><span class="o">::</span><span class="n">error_code</span> <span class="n">ignored_error</span><span class="p">;</span>
+      <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="n">ignored_error</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+从上面👆的代码我们知道，如果要写一个TCP Server，除了和TCP Client之后，还需要一个acceptor。</p>
+<h2 id="daytime-client-daytime-server-improved">Daytime Client 和 Daytime Server Improved</h2>
+<p>上面的程序最终跑出来的结果是，先启动一个TCP Server，接着运行一个TCP Client，接着TCP Client会收到一个时间；再启动给一个TCP Client还是同样的结果。可以同时存在多个TCP Client，但是不能存在多个TCP Server，因为每个TCP Server都要占用一个TCP的端口。</p>
+<p>现在我们修改TCP Server的程序，让TCP Server能够向Client发送多次时间。</p>
+<p><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/asio.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">make_daytime_string</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> <span class="c1">// For time_t, time and ctime;</span>
+  <span class="kt">time_t</span> <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">QCoreApplication</span> <span class="n">a</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">io_service</span> <span class="n">io_service</span><span class="p">;</span>
+        <span class="n">tcp</span><span class="o">::</span><span class="n">acceptor</span> <span class="n">acceptor</span><span class="p">(</span><span class="n">io_service</span><span class="p">,</span> <span class="n">tcp</span><span class="o">::</span><span class="n">endpoint</span><span class="p">(</span><span class="n">tcp</span><span class="o">::</span><span class="n">v4</span><span class="p">(),</span> <span class="mi">8898</span><span class="p">));</span>
+
+        <span class="n">tcp</span><span class="o">::</span><span class="n">socket</span> <span class="n">socket</span><span class="p">(</span><span class="n">io_service</span><span class="p">);</span>
+        <span class="c1">// 没有Client连接时，会先阻塞在这里</span>
+        <span class="n">acceptor</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="n">socket</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;breakpoint</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="c1">// 有了Client连接之后，会阻塞在这里</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;make day time</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="n">make_daytime_string</span><span class="p">();</span>
+            <span class="n">boost</span><span class="o">::</span><span class="n">system</span><span class="o">::</span><span class="n">error_code</span> <span class="n">ignored_error</span><span class="p">;</span>
+            <span class="n">socket</span><span class="p">.</span><span class="n">write_some</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="n">ignored_error</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+当TCP Server改成上面的代码之后，Server端随便输入什么，都会向客户端发送一个时间。但是上面的代码只能维持一个连接，一旦有TCP Client连接上之后，就不能有其他的Client连接了。</p>
+<p>我们最终的目标是Server一直启动在那里，然后客户端发送一个请求之后，会立即收到当前时间，再请求之后，还是会收到时间；如果同时再启动一个Client还是会有同样的效果。显然，根据上面的代码，我们无法改写实现这样的功能，所以我们继续学习官网的教程，接下来应该到异步发送和接收了。</p>
+<h2 id="daytime3-an-asynchronous-tcp-daytime-server"><a href="https://www.boost.org/doc/libs/1_63_0/doc/html/boost_asio/tutorial.html#boost_asio.tutorial.tutdaytime3">Daytime.3 - An asynchronous TCP daytime server</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QCoreApplication&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/bind.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/shared_ptr.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/enable_shared_from_this.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/asio.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;boost/make_shared.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">ip</span><span class="o">::</span><span class="n">tcp</span><span class="p">;</span>
+
+<span class="c1">// retrun current time</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">make_daytime_string</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> <span class="c1">// For time_t, time and ctime;</span>
+  <span class="kt">time_t</span> <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">now</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// each connection containing a socket</span>
+<span class="k">class</span> <span class="nc">tcp_connection</span>
+        <span class="o">:</span> <span class="k">public</span> <span class="n">boost</span><span class="o">::</span><span class="n">enable_shared_from_this</span><span class="o">&lt;</span><span class="n">tcp_connection</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">tcp_connection</span><span class="o">&gt;</span> <span class="n">pointer</span><span class="p">;</span>
+
+    <span class="n">tcp_connection</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">io_service</span><span class="o">&amp;</span> <span class="n">io_service</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">socket_</span><span class="p">(</span><span class="n">io_service</span><span class="p">)</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// GET接口，返回socket</span>
+    <span class="n">tcp</span><span class="o">::</span><span class="n">socket</span><span class="o">&amp;</span> <span class="n">socket</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">socket_</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// public 接口，用socket接口给对方发送当前时间</span>
+    <span class="kt">void</span> <span class="n">start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;handle write&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">message_</span> <span class="o">=</span> <span class="n">make_daytime_string</span><span class="p">();</span>
+
+        <span class="n">socket_</span><span class="p">.</span><span class="n">async_write_some</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">buffer</span><span class="p">(</span><span class="n">message_</span><span class="p">),</span>
+                           <span class="n">boost</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tcp_connection</span><span class="o">::</span><span class="n">handle_write</span><span class="p">,</span>
+                                       <span class="k">this</span><span class="p">,</span>
+                                       <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">error</span><span class="p">,</span>
+                                       <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">bytes_transferred</span><span class="p">));</span>
+    <span class="p">}</span>
+
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="c1">// async_write_some的回掉函数</span>
+    <span class="kt">void</span> <span class="n">handle_write</span><span class="p">(</span><span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">system</span><span class="o">::</span><span class="n">error_code</span><span class="o">&amp;</span> <span class="n">ec</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">bytes_transferred</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;handle write&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">tcp</span><span class="o">::</span><span class="n">socket</span> <span class="n">socket_</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message_</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="c1">// TCP Server类</span>
+<span class="k">class</span> <span class="nc">tcp_server</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">tcp_server</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">io_service</span><span class="o">&amp;</span> <span class="n">io_service</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">acceptor_</span><span class="p">(</span><span class="n">io_service</span><span class="p">,</span> <span class="n">tcp</span><span class="o">::</span><span class="n">endpoint</span><span class="p">(</span><span class="n">tcp</span><span class="o">::</span><span class="n">v4</span><span class="p">(),</span> <span class="mi">8898</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">start_accept</span><span class="p">();</span>
+    <span class="p">}</span>
+
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="c1">// 构造函数调用，acceptor异步接收连接</span>
+    <span class="kt">void</span> <span class="n">start_accept</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;start accept&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">tcp_connection</span><span class="o">::</span><span class="n">pointer</span> <span class="n">connection_ptr</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">tcp_connection</span><span class="o">&gt;</span><span class="p">(</span><span class="n">acceptor_</span><span class="p">.</span><span class="n">get_io_service</span><span class="p">());</span>
+        <span class="n">acceptor_</span><span class="p">.</span><span class="n">async_accept</span><span class="p">(</span><span class="n">connection_ptr</span><span class="o">-&gt;</span><span class="n">socket</span><span class="p">(),</span>
+                         <span class="n">boost</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tcp_server</span><span class="o">::</span><span class="n">handle_accept</span><span class="p">,</span>
+                                     <span class="k">this</span><span class="p">,</span>
+                                     <span class="n">connection_ptr</span><span class="p">,</span>
+                                     <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">error</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// acceptor异步接收的回掉函数</span>
+    <span class="kt">void</span> <span class="n">handle_accept</span><span class="p">(</span><span class="n">tcp_connection</span><span class="o">::</span><span class="n">pointer</span> <span class="n">connection</span><span class="p">,</span>
+                       <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">system</span><span class="o">::</span><span class="n">error_code</span><span class="o">&amp;</span> <span class="n">ec</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;start handle accept&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ec</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 发送</span>
+            <span class="n">connection</span><span class="o">-&gt;</span><span class="n">start</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">start_accept</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// acceptor</span>
+    <span class="n">tcp</span><span class="o">::</span><span class="n">acceptor</span> <span class="n">acceptor_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">QCoreApplication</span> <span class="n">a</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">boost</span><span class="o">::</span><span class="n">asio</span><span class="o">::</span><span class="n">io_service</span> <span class="n">io_service</span><span class="p">;</span>
+        <span class="n">tcp_server</span> <span class="n">server</span><span class="p">(</span><span class="n">io_service</span><span class="p">);</span>
+        <span class="n">io_service</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">exec</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>第一次看上面👆的代码的话，可能会感觉比较困难，毕竟以前明明只有一个类的啊，而且直接跳到了Server，Client为什么没有实现的例子。
+首先tcp_server是主要的类，维护了一个acceptor；tcp_connection表示每一个连接，里面维护了一个scoket。acceptor每次accept之前都会new 一个tcp_connection，然后在handle_accept里用tcp_connection操作socket发送或者接收。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../Basic/端口号/" title="端口号" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                端口号
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Timer/" title="Timer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Timer
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
